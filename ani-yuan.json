@@ -136,9 +136,9 @@
             "factoryId": "web-selector",
             "version": 2,
             "arguments": {
-                "name": "落攻动漫",
+                "name": "风车动漫",
                 "description": "",
-                "iconUrl": "http://api.treason.cn/img/v1/bg/1040g008313hgi75ng0005nkdgqe09adv2m4c328.jpeg",
+                "iconUrl": "https://i01piccdn.sogoucdn.com/5c40c05ea855b949",
                 "searchConfig": {
                     "searchUrl": "https://www.fengchedonman.com/vodsearch/{keyword}----------1---.html",
                     "searchUseOnlyFirstWord": false,
