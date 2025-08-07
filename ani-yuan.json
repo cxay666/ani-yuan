@@ -879,7 +879,7 @@
                     "channelFormatId": "index-grouped",
                     "selectorChannelFormatFlattened": {
                         "selectChannelNames": ".anthology-tab > .swiper-wrapper a",
-                        "matchChannelName": "^(?<ch>.+?)(\\d+)?$",
+                        "matchChannelName": "(?<ch>.*?\d)",
                         "selectEpisodeLists": ".anthology-list-play",
                         "selectEpisodesFromList": "a",
                         "selectEpisodeLinksFromList": "",
@@ -1171,10 +1171,76 @@
                     }
                 }
             }
+        },
+        {
+            "factoryId": "web-selector",
+            "version": 2,
+            "arguments": {
+                "name": "火狼动漫",
+                "description": "可看里番",
+                "iconUrl": "https://huolangdm2.net/favicon.ico",
+                "searchConfig": {
+                    "searchUrl": "https://huolangdm2.net/search/{keyword}",
+                    "searchUseOnlyFirstWord": false,
+                    "searchRemoveSpecial": true,
+                    "searchUseSubjectNamesCount": 1,
+                    "rawBaseUrl": "",
+                    "requestInterval": 3000,
+                    "subjectFormatId": "indexed",
+                    "selectorSubjectFormatA": {
+                        "selectLists": "",
+                        "preferShorterName": true
+                    },
+                    "selectorSubjectFormatIndexed": {
+                        "selectNames": ".text-ellipsis.text-mr-1",
+                        "selectLinks": ".col-md-2 a",
+                        "preferShorterName": true
+                    },
+                    "selectorSubjectFormatJsonPathIndexed": {
+                        "selectLinks": "$[*]['url', 'link']",
+                        "selectNames": "$[*]['title','name']",
+                        "preferShorterName": true
+                    },
+                    "channelFormatId": "index-grouped",
+                    "selectorChannelFormatFlattened": {
+                        "selectChannelNames": "ul.nav.nav-tabs.ff-playurl-tab > li",
+                        "matchChannelName": "^(?<ch>.+?)(\\d+)?$",
+                        "selectEpisodeLists": "ul.list-unstyled",
+                        "selectEpisodesFromList": "a",
+                        "selectEpisodeLinksFromList": "",
+                        "matchEpisodeSortFromName": "第\\s*(?<ep>.+)\\s*[话集]"
+                    },
+                    "selectorChannelFormatNoChannel": {
+                        "selectEpisodes": "",
+                        "selectEpisodeLinks": "",
+                        "matchEpisodeSortFromName": "第\\s*(?<ep>.+)\\s*[话集]"
+                    },
+                    "defaultResolution": "1080P",
+                    "defaultSubtitleLanguage": "CHS",
+                    "onlySupportsPlayers": [],
+                    "filterByEpisodeSort": true,
+                    "filterBySubjectName": true,
+                    "selectMedia": {
+                        "distinguishSubjectName": true,
+                        "distinguishChannelName": true
+                    },
+                    "matchVideo": {
+                        "enableNestedUrl": true,
+                        "matchNestedUrl": "^.+(m3u8|vip|xigua\\.php).+\\?",
+                        "matchVideoUrl": "(?<v>https?:\\/\\/(?:[^/]*\\.)?(?:hn\\.bfvvs|modujx\\w*|rrcdnbf\\w*|lz-cdn\\w*|v\\.cdnlz\\w*|bfikuncdn|cdn\\.wlcdn\\w*|tlkqc|vip\\.ffzy-play\\w*|vip\\.ffzy-online\\w*|svipsvip\\.ffzy-online\\w*)\\S+\\.(?:mp4|mkv|m3u8)(?:\\?.+)?)",
+                        "cookies": "quality=1080",
+                        "addHeadersToVideo": {
+                            "referer": "",
+                            "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
+                        }
+                    }
+                }
+            }
         }
     ]
 }
 }
+
 
 
 
