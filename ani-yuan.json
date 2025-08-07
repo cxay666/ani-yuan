@@ -879,7 +879,7 @@
                     "channelFormatId": "index-grouped",
                     "selectorChannelFormatFlattened": {
                         "selectChannelNames": ".anthology-tab > .swiper-wrapper a",
-                        "matchChannelName": "(?<ch>.*?\d)",
+                        "matchChannelName": "(?<ch>.*?\\d)",
                         "selectEpisodeLists": ".anthology-list-play",
                         "selectEpisodesFromList": "a",
                         "selectEpisodeLinksFromList": "",
