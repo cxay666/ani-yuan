@@ -1,59 +1,122 @@
 {
-    "factoryId": "web-selector",
-    "version": 2,
-    "arguments": {
-        "name": "九兔动漫",
-        "description": "",
-        "iconUrl": "",
-        "searchConfig": {
-            "searchUrl": "https://www.9tdm.com/search.html?wd={keyword}",
-            "searchUseOnlyFirstWord": true,
+  "exportedMediaSourceDataList": {
+    "mediaSources": [
+      {
+        "factoryId": "web-selector",
+        "version": 2,
+        "arguments": {
+          "name": "hanime1_1080p",
+          "description": "H~低调使用",
+          "iconUrl": "https://gitee.com/wan0ge/extract-pure-links/raw/Ani_Pages/favicon/hanime1.me_1080.png",
+          "searchConfig": {
+            "searchUrl": "https://hanime1.me/search?query={keyword}",
+            "searchUseOnlyFirstWord": false,
+            "searchRemoveSpecial": true,
+            "searchUseSubjectNamesCount": 2,
             "rawBaseUrl": "",
-            "subjectFormatId": "a",
+            "requestInterval": 1233,
+            "subjectFormatId": "indexed",
             "selectorSubjectFormatA": {
-                "selectLists": "body > div.container-fluid > div > div.col-md-9.ms-sm-auto.col-lg-10.p-0.px-md-4 > div > ul > li > div > div.w-obj.flex-grow-1.mr-1.ps-3.overflow-hidden.fs-7.text-body-secondary > h3 > a",
-                "preferShorterName": true
+              "selectLists": "div.home-rows-videos-wrapper a",
+              "preferShorterName": false
             },
             "selectorSubjectFormatIndexed": {
-                "selectNames": ".search-box .thumb-content > .thumb-txt",
-                "selectLinks": ".search-box .thumb-menu > a",
-                "preferShorterName": true
-            },
-            "selectorSubjectFormatJsonPathIndexed": {
-                "selectLinks": "$[*]['url', 'link']",
-                "selectNames": "$[*]['title','name']",
-                "preferShorterName": true
+              "selectNames": "#home-rows-wrapper > div.content-padding-new > div > div.col-xs-12.search-doujin-videos.hidden-sm.hidden-md.hidden-lg.hidden-xl.hover-lighter.multiple-link-wrapper > div > div > div > div.card-mobile-title",
+              "selectLinks": "#home-rows-wrapper > div.content-padding-new > div > div.col-xs-12.search-doujin-videos.hidden-sm.hidden-md.hidden-lg.hidden-xl.hover-lighter.multiple-link-wrapper > a",
+              "preferShorterName": true
             },
             "channelFormatId": "index-grouped",
             "selectorChannelFormatFlattened": {
-                "selectChannelNames": "body > div.container-fluid > div > div.col-md-9.ms-sm-auto.col-lg-10.p-0.px-md-4 > div.video-urls.bg-body.rounded.p-3.p-md-4.mt-3.mt-md-4 > div.form-floating > select > option",
-                "matchChannelName": "^(?<ch>.+?)(\\d+)?$",
-                "selectEpisodeLists": ".hl-plays-list",
-                "selectEpisodesFromList": "a",
-                "selectEpisodeLinksFromList": "",
-                "matchEpisodeSortFromName": "第\\s*(?<ep>.+)\\s*[话集]"
+              "selectChannelNames": "#video-artist-name",
+              "matchChannelName": "",
+              "selectEpisodeLists": "#playlist-scroll",
+              "selectEpisodesFromList": "div.related-watch-wrap .card-mobile-title",
+              "selectEpisodeLinksFromList": "#playlist-scroll > div.related-watch-wrap > a",
+              "matchEpisodeSortFromName": "(?<ep>(?:SP\\s\\d+|\\d+))"
             },
             "selectorChannelFormatNoChannel": {
-                "selectEpisodes": "body > div.container-fluid > div > div.col-md-9.ms-sm-auto.col-lg-10.p-0.px-md-4 > div.video-urls.bg-body.rounded.p-3.p-md-4.mt-3.mt-md-4 > div.form-floating > select > option:nth-child(1)",
-                "selectEpisodeLinks": "",
-                "matchEpisodeSortFromName": "第\\s*(?<ep>.+)\\s*[话集]"
+              "selectEpisodes": "#playlist-scroll > div.related-watch-wrap .card-mobile-title",
+              "selectEpisodeLinks": "#playlist-scroll > div.related-watch-wrap > a",
+              "matchEpisodeSortFromName": "(?<ep>(?:SP\\s\\d+|\\d+))"
             },
-            "filterByEpisodeSort": true,
-            "filterBySubjectName": true,
-            "selectMedia": {
-                "distinguishSubjectName": true,
-                "distinguishChannelName": true
-            },
+            "defaultResolution": "1080P",
+            "filterByEpisodeSort": false,
+            "filterBySubjectName": false,
+            "selectMedia":{
+              "distinguishSubjectName":false,
+              "distinguishChannelName":false
+			},
             "matchVideo": {
-                "enableNestedUrl": true,
-                "matchNestedUrl": "^.+(m3u8|vip|xigua\\.php).+\\?",
-                "matchVideoUrl": "(^http(s)?:\\/\\/(?!.*http(s)?:\\/\\/).+((\\.mp4)|(\\.mkv)|(m3u8)).*(\\?.+)?)|(akamaized)|(bilivideo.com)",
-                "cookies": "quality=1080",
-                "addHeadersToVideo": {
-                    "referer": "",
-                    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
-                }
+              "enableNestedUrl": true,
+              "matchNestedUrl": "^(?=.*(index))(?=.*(1080|720|480)).*?(m3u8|mp4|vip|xigua\\.php).*",
+              "matchVideoUrl": "(?<v>https?:\\/\\/(?:[^\\/]*\\.)?(vdownload|abre-videos|xvideos).*?(1080).*\\.(m3u8|mp4|vip|xigua\\.php)(?:\\?.+)?)",
+              "cookies": "quality=1080",
+              "addHeadersToVideo": {
+                "referer": "",
+                "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
+              }
             }
+          }
         }
-    }
+      },
+      {
+        "factoryId": "web-selector",
+        "version": 2,
+        "arguments": {
+          "name": "hanime1_720p",
+          "description": "无1080p时使用",
+          "iconUrl": "https://gitee.com/wan0ge/extract-pure-links/raw/Ani_Pages/favicon/hanime1.me_720.png",
+          "searchConfig": {
+            "searchUrl": "https://hanime1.me/search?query={keyword}",
+            "searchUseOnlyFirstWord": false,
+            "searchRemoveSpecial": true,
+            "searchUseSubjectNamesCount": 2,
+            "rawBaseUrl": "",
+            "requestInterval": 1233,
+            "subjectFormatId": "indexed",
+            "selectorSubjectFormatA": {
+              "selectLists": "div.home-rows-videos-wrapper a",
+              "preferShorterName": false
+            },
+            "selectorSubjectFormatIndexed": {
+              "selectNames": "#home-rows-wrapper > div.content-padding-new > div > div.col-xs-12.search-doujin-videos.hidden-sm.hidden-md.hidden-lg.hidden-xl.hover-lighter.multiple-link-wrapper > div > div > div > div.card-mobile-title",
+              "selectLinks": "#home-rows-wrapper > div.content-padding-new > div > div.col-xs-12.search-doujin-videos.hidden-sm.hidden-md.hidden-lg.hidden-xl.hover-lighter.multiple-link-wrapper > a",
+              "preferShorterName": true
+            },
+            "channelFormatId": "index-grouped",
+            "selectorChannelFormatFlattened": {
+              "selectChannelNames": "#video-artist-name",
+              "matchChannelName": "",
+              "selectEpisodeLists": "#playlist-scroll",
+              "selectEpisodesFromList": "div.related-watch-wrap .card-mobile-title",
+              "selectEpisodeLinksFromList": "#playlist-scroll > div.related-watch-wrap > a",
+              "matchEpisodeSortFromName": "(?<ep>(?:SP\\s\\d+|\\d+))"
+            },
+            "selectorChannelFormatNoChannel": {
+              "selectEpisodes": "#playlist-scroll > div.related-watch-wrap .card-mobile-title",
+              "selectEpisodeLinks": "#playlist-scroll > div.related-watch-wrap > a",
+              "matchEpisodeSortFromName": "(?<ep>(?:SP\\s\\d+|\\d+))"
+            },
+            "defaultResolution": "720P",
+            "filterByEpisodeSort": false,
+            "filterBySubjectName": false,
+            "selectMedia":{
+              "distinguishSubjectName":false,
+              "distinguishChannelName":false
+			},
+            "matchVideo": {
+              "enableNestedUrl": true,
+              "matchNestedUrl": "^(?=.*(index))(?=.*(1080|720|480)).*?(m3u8|mp4|vip|xigua\\.php).*",
+              "matchVideoUrl": "(?<v>https?:\\/\\/(?:[^\\/]*\\.)?(vdownload|abre-videos|xvideos).*?(1080|720|480).*\\.(m3u8|mp4|vip|xigua\\.php)(?:\\?.+)?)",
+              "cookies": "quality=720",
+              "addHeadersToVideo": {
+                "referer": "",
+                "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
 }
