@@ -1,71 +1,59 @@
 {
-  "exportedMediaSourceDataList": {
-    "mediaSources": [
-        {
-            "factoryId": "web-selector",
-            "version": 2,
-            "arguments": {
-                "name": "酱紫社(修复)",
-                "description": "",
-                "iconUrl": "http://www.jzsdm1.com/upload/eighteen/20241227-1/991272b4a1029e60a9951c8ea874ff2a.png",
-                "searchConfig": {
-                    "searchUrl": "http://www.jzsdm1.com/index.php/vod/search.html?wd={keyword}",
-                    "searchUseOnlyFirstWord": true,
-                    "searchRemoveSpecial": true,
-                    "searchUseSubjectNamesCount": 1,
-                    "rawBaseUrl": "",
-                    "requestInterval": 3000,
-                    "subjectFormatId": "indexed",
-                    "selectorSubjectFormatA": {
-                        "selectLists": "div.video-info-header > a",
-                        "preferShorterName": true
-                    },
-                    "selectorSubjectFormatIndexed": {
-                        "selectNames": "body > .box-width .search-box .thumb-content > .thumb-txt",
-                        "selectLinks": "body > .box-width .search-box .thumb-menu > a",
-                        "preferShorterName": true
-                    },
-                    "selectorSubjectFormatJsonPathIndexed": {
-                        "selectLinks": "$[*]['url', 'link']",
-                        "selectNames": "$[*]['title','name']",
-                        "preferShorterName": true
-                    },
-                    "channelFormatId": "index-grouped",
-                    "selectorChannelFormatFlattened": {
-                        "selectChannelNames": ".anthology-tab > .swiper-wrapper a",
-                        "matchChannelName": "^(?<ch>.+?)(\\d+)?$",
-                        "selectEpisodeLists": ".anthology-list-box",
-                        "selectEpisodesFromList": "a",
-                        "selectEpisodeLinksFromList": "",
-                        "matchEpisodeSortFromName": "第\\s*(?<ep>.+)\\s*[话集]"
-                    },
-                    "selectorChannelFormatNoChannel": {
-                        "selectEpisodes": ".anthology-list-play a",
-                        "selectEpisodeLinks": "",
-                        "matchEpisodeSortFromName": "(第\\s*(?<ep>.+)\\s*[话集])|1080P"
-                    },
-                    "defaultResolution": "1080P",
-                    "defaultSubtitleLanguage": "CHS",
-                    "onlySupportsPlayers": [],
-                    "filterByEpisodeSort": true,
-                    "filterBySubjectName": true,
-                    "selectMedia": {
-                        "distinguishSubjectName": true,
-                        "distinguishChannelName": true
-                    },
-                    "matchVideo": {
-                        "enableNestedUrl": true,
-                        "matchNestedUrl": "$^",
-                        "matchVideoUrl": "(^http(s)?:\\/\\/(?!.*http(s)?:\\/\\/).+((m3u8)).*(\\?.+)?)|(akamaized)|(bilivideo.com)|(url=(?<v>.+playlist.m3u8))",
-                        "cookies": "quality=1080P",
-                        "addHeadersToVideo": {
-                            "referer": "",
-                            "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
-                        }
-                    }
+    "factoryId": "web-selector",
+    "version": 2,
+    "arguments": {
+        "name": "九兔动漫",
+        "description": "",
+        "iconUrl": "",
+        "searchConfig": {
+            "searchUrl": "https://www.9tdm.com/search.html?wd={keyword}",
+            "searchUseOnlyFirstWord": true,
+            "rawBaseUrl": "",
+            "subjectFormatId": "a",
+            "selectorSubjectFormatA": {
+                "selectLists": "body > div.container-fluid > div > div.col-md-9.ms-sm-auto.col-lg-10.p-0.px-md-4 > div > ul > li > div > div.w-obj.flex-grow-1.mr-1.ps-3.overflow-hidden.fs-7.text-body-secondary > h3 > a",
+                "preferShorterName": true
+            },
+            "selectorSubjectFormatIndexed": {
+                "selectNames": ".search-box .thumb-content > .thumb-txt",
+                "selectLinks": ".search-box .thumb-menu > a",
+                "preferShorterName": true
+            },
+            "selectorSubjectFormatJsonPathIndexed": {
+                "selectLinks": "$[*]['url', 'link']",
+                "selectNames": "$[*]['title','name']",
+                "preferShorterName": true
+            },
+            "channelFormatId": "index-grouped",
+            "selectorChannelFormatFlattened": {
+                "selectChannelNames": "body > div.container-fluid > div > div.col-md-9.ms-sm-auto.col-lg-10.p-0.px-md-4 > div.video-urls.bg-body.rounded.p-3.p-md-4.mt-3.mt-md-4 > div.form-floating > select > option",
+                "matchChannelName": "^(?<ch>.+?)(\\d+)?$",
+                "selectEpisodeLists": ".hl-plays-list",
+                "selectEpisodesFromList": "a",
+                "selectEpisodeLinksFromList": "",
+                "matchEpisodeSortFromName": "第\\s*(?<ep>.+)\\s*[话集]"
+            },
+            "selectorChannelFormatNoChannel": {
+                "selectEpisodes": "body > div.container-fluid > div > div.col-md-9.ms-sm-auto.col-lg-10.p-0.px-md-4 > div.video-urls.bg-body.rounded.p-3.p-md-4.mt-3.mt-md-4 > div.form-floating > select > option:nth-child(1)",
+                "selectEpisodeLinks": "",
+                "matchEpisodeSortFromName": "第\\s*(?<ep>.+)\\s*[话集]"
+            },
+            "filterByEpisodeSort": true,
+            "filterBySubjectName": true,
+            "selectMedia": {
+                "distinguishSubjectName": true,
+                "distinguishChannelName": true
+            },
+            "matchVideo": {
+                "enableNestedUrl": true,
+                "matchNestedUrl": "^.+(m3u8|vip|xigua\\.php).+\\?",
+                "matchVideoUrl": "(^http(s)?:\\/\\/(?!.*http(s)?:\\/\\/).+((\\.mp4)|(\\.mkv)|(m3u8)).*(\\?.+)?)|(akamaized)|(bilivideo.com)",
+                "cookies": "quality=1080",
+                "addHeadersToVideo": {
+                    "referer": "",
+                    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
                 }
             }
         }
-    ]
-  }
+    }
 }
