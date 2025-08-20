@@ -1,11 +1,13 @@
 {
-    "factoryId": "web-selector",
-    "version": 2,
-    "arguments": {
-        "name": "九兔动漫",
-        "description": "",
-        "iconUrl": "",
-        "searchConfig": {
+    "mediaSources": [
+        {
+            "factoryId": "web-selector",
+            "version": 2,
+            "arguments": {
+            "name": "九兔动漫",
+            "description": "",
+            "iconUrl": "",
+            "searchConfig": {
             "searchUrl": "https://www.9tdm.com/search.html?wd={keyword}",
             "searchUseOnlyFirstWord": true,
             "rawBaseUrl": "",
@@ -56,4 +58,6 @@
             }
         }
     }
+        }
+    ]
 }
