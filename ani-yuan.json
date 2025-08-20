@@ -1892,10 +1892,10 @@
             "version": 2,
             "arguments": {
                 "name": "九兔动漫",
-                "description": "",
-                "iconUrl": "",
+                "description": "可看里番，部分地区被屏蔽",
+                "iconUrl": "https://www.9tdm.com/template/dm/img/favicon.ico",
                 "searchConfig": {
-                    "searchUrl": "https://www.9tdm.com/search.html?wd={keyword}",
+                    "searchUrl": "https://www.jtdm.cc/search/page/1/wd/{keyword}.html",
                     "searchUseOnlyFirstWord": true,
                     "rawBaseUrl": "",
                     "subjectFormatId": "a",
