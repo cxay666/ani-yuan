@@ -1113,7 +1113,7 @@
             "arguments": {
                 "name": "佩可爱动漫",
                 "description": "",
-                "iconUrl": "https://www.miaoaaa.com/wp-content/uploads/2023/09/pekolove.com_.png",
+                "iconUrl": "https://acg.pekolove.net/wp-content/uploads/yier-48.gif",
                 "searchConfig": {
                     "searchUrl": "https://acg.pekolove.net/?s={keyword}",
                     "searchUseOnlyFirstWord": false,
@@ -1121,14 +1121,14 @@
                     "searchUseSubjectNamesCount": 1,
                     "rawBaseUrl": "",
                     "requestInterval": 3000,
-                    "subjectFormatId": "a",
+                    "subjectFormatId": "indexed",
                     "selectorSubjectFormatA": {
                         "selectLists": ".wp-block-post-title > a",
                         "preferShorterName": true
                     },
                     "selectorSubjectFormatIndexed": {
-                        "selectNames": "",
-                        "selectLinks": "",
+                        "selectNames": "#ag-main-container .anime-resource-unit-wrapper-complex-v9 p a",
+                        "selectLinks": "#ag-main-container .anime-resource-unit-wrapper-complex-v9 p a",
                         "preferShorterName": true
                     },
                     "selectorSubjectFormatJsonPathIndexed": {
