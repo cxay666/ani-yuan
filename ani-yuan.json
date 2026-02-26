@@ -1438,9 +1438,9 @@
             "arguments": {
                 "name": "风车动漫(里番)",
                 "description": "",
-                "iconUrl": "https://fcdm003.cc/template/zhiyan/assets/favicon.ico",
+                "iconUrl": "https://dmfc002.cc/template/zhiyan/assets/favicon.ico",
                 "searchConfig": {
-                    "searchUrl": "https://fcdm003.cc/see.html?wd={keyword}",
+                    "searchUrl": "https://dmfc002.cc/see.html?wd={keyword}",
                     "searchUseOnlyFirstWord": false,
                     "searchRemoveSpecial": true,
                     "searchUseSubjectNamesCount": 1,
@@ -1698,9 +1698,9 @@
             "arguments": {
                 "name": "风车动漫2",
                 "description": "",
-                "iconUrl": "https://cdn.yinghuazy.xyz/webjs/stui_tpl/statics/img/favicon.ico",
+                "iconUrl": "https://www.fengchedm1.com/favicon.ico",
                 "searchConfig": {
-                    "searchUrl": "https://www.dmla5.com/search/-------------.html?wd={keyword}",
+                    "searchUrl": "https://yhdmya.com/search/-------------.html?wd={keyword}",
                     "searchUseOnlyFirstWord": false,
                     "searchRemoveSpecial": true,
                     "searchUseSubjectNamesCount": 1,
@@ -1723,9 +1723,9 @@
                     },
                     "channelFormatId": "index-grouped",
                     "selectorChannelFormatFlattened": {
-                        "selectChannelNames": ".nav.nav-tabs > li",
+                        "selectChannelNames": ".nav a[href*="#playlist"]",
                         "matchChannelName": "^(?<ch>.+?)(\\d+)?$",
-                        "selectEpisodeLists": ".stui-content__playlist.clearfix",
+                        "selectEpisodeLists": ".tab-content .tab-pane",
                         "selectEpisodesFromList": "a",
                         "selectEpisodeLinksFromList": "",
                         "matchEpisodeSortFromName": "第\\s*(?<ep>.+)\\s*[话集]"
@@ -2465,10 +2465,76 @@
                     }
                 }
             }
+        },
+        {
+            "factoryId": "web-selector",
+            "version": 2,
+            "arguments": {
+                "name": "七色番",
+                "description": "",
+                "iconUrl": "https://www.7sefun.top/favicon.ico",
+                "searchConfig": {
+                    "searchUrl": "https://www.7sefun.top/vodsearch/-------------.html?wd={keyword}",
+                    "searchUseOnlyFirstWord": true,
+                    "searchRemoveSpecial": true,
+                    "searchUseSubjectNamesCount": 1,
+                    "rawBaseUrl": "https://www.7sefun.top/",
+                    "requestInterval": 3000,
+                    "subjectFormatId": "indexed",
+                    "selectorSubjectFormatA": {
+                        "selectLists": ".video-wrapper",
+                        "preferShorterName": true
+                    },
+                    "selectorSubjectFormatIndexed": {
+                        "selectNames": ".video-by",
+                        "selectLinks": ".video-wrapper",
+                        "preferShorterName": true
+                    },
+                    "selectorSubjectFormatJsonPathIndexed": {
+                        "selectLinks": "$[*]['url', 'link']",
+                        "selectNames": "$[*]['title','name']",
+                        "preferShorterName": true
+                    },
+                    "channelFormatId": "index-grouped",
+                    "selectorChannelFormatFlattened": {
+                        "selectChannelNames": ".chat-stream-bfq",
+                        "matchChannelName": "^(?<ch>.+?)(\\d+)?$",
+                        "selectEpisodeLists": ".message-container.vod-play-list-container",
+                        "selectEpisodesFromList": ".e00369g3d6a a",
+                        "selectEpisodeLinksFromList": "",
+                        "matchEpisodeSortFromName": "第\\s*(?<ep>.+)\\s*[话集]"
+                    },
+                    "selectorChannelFormatNoChannel": {
+                        "selectEpisodes": "#glist-1 > div.module-blocklist.scroll-box.scroll-box-y > div > a",
+                        "selectEpisodeLinks": "",
+                        "matchEpisodeSortFromName": "第\\s*(?<ep>.+)\\s*[话集]"
+                    },
+                    "defaultResolution": "1080P",
+                    "defaultSubtitleLanguage": "CHS",
+                    "onlySupportsPlayers": [],
+                    "filterByEpisodeSort": true,
+                    "filterBySubjectName": true,
+                    "selectMedia": {
+                        "distinguishSubjectName": true,
+                        "distinguishChannelName": true
+                    },
+                    "matchVideo": {
+                        "enableNestedUrl": true,
+                        "matchNestedUrl": "^.+(m3u8|vip|xigua\\.php).+\\?",
+                        "matchVideoUrl": "(^http(s)?:\\/\\/(?!.*http(s)?:\\/\\/).+((\\.mp4)|(\\.mkv)|(m3u8)).*(\\?.+)?)|(akamaized)|(bilivideo.com)",
+                        "cookies": "quality=1080",
+                        "addHeadersToVideo": {
+                            "referer": "https://www.7sefun.top/",
+                            "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
+                        }
+                    }
+                }
+            }
         }
     ]
 }
-      }
+}
+
 
 
 
