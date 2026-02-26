@@ -657,10 +657,10 @@
             "version": 2,
             "arguments": {
                 "name": "第一动漫(替换)",
-                "description": "可看里番",
+                "description": "直连，可看里番",
                 "iconUrl": "https://anime.d1dm.xyz/template/conch/asset/img/favicon1.png",
                 "searchConfig": {
-                    "searchUrl": "https://1anime2025.me/vodsearch/-------------.html?wd={keyword}",
+                    "searchUrl": "https://1anime2026.me/vodsearch/-------------.html?wd={keyword}",
                     "searchUseOnlyFirstWord": false,
                     "searchRemoveSpecial": true,
                     "searchUseSubjectNamesCount": 1,
