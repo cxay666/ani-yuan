@@ -722,8 +722,8 @@
             "version": 2,
             "arguments": {
                 "name": "次元方舟",
-                "description": "",
-                "iconUrl": "https://itopdog.xyxza.com/52pknet/imgfile/20231211/11102331be1e.jpg",
+                "description": "直连",
+                "iconUrl": "https://wbep-image.sf-express.com/cx/b/8e70f5d88f784832b20daee0f98a995e.jpg",
                 "searchConfig": {
                     "searchUrl": "http://www.cyfz.vip/search.html?wd={keyword}",
                     "searchUseOnlyFirstWord": false,
