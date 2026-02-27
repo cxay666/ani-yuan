@@ -64,7 +64,7 @@
         "version": 2,
         "arguments": {
           "name": "hanime1_720p",
-          "description": "无1080p时使用",
+          "description": "无1080p时，可使用",
           "iconUrl": "https://gitee.com/wan0ge/extract-pure-links/raw/Ani_Pages/favicon/hanime1.me_720.png",
           "searchConfig": {
             "searchUrl": "https://hanime1.me/search?query={keyword}",
